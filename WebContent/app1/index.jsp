@@ -10,7 +10,6 @@
 1，获取当前页面的所有a节点，并为每一个人节点添加click响应函数，并取消其默认行为
 2，准备放松ajax请求，url 为 a节点的href 属性  args（时间戳）
 3，响应为一个json对象，包括  多少xx本书，共计xxx多少元  bookName，totalMoney，totalCount
-4，
 
 -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/jquery-1.8.3.js"></script>
