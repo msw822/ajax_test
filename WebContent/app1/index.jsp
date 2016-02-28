@@ -18,7 +18,7 @@
 
 $(function(){
 	var isHasCart = ${sessionScope.sc == null};
-	alert(isHasCart);
+	//alert(isHasCart);
 	if(isHasCart){
 		$("#cart").hide();
 	}else{
