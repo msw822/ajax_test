@@ -17,11 +17,19 @@
 <script type="text/javascript">
 
 $(function(){
-	
-	
-	
+	var isHasCart = ${sessionScope.sc == null};
+	alert(isHasCart);
+	if(isHasCart){
+		$("#cart").hide();
+	}else{
+		$("#cart").show();
+		$("#bookName").text("${sessionScope.sc.bookName}");
+		$("#totalMoney").text("${sessionScope.sc.totalMoney}");
+		$("#totalCount").text("${sessionScope.sc.totalCount}");
+	}
 	
 	$("a").click(function(){
+		$("#cart").show()
 		var url =this.href;
 		var agrs = {"time": new Date()};
 		
@@ -40,17 +48,21 @@ $(function(){
 
 </head>
 <body>
-	您已经将&nbsp <span id="bookName"></span> &nbsp加入到购物车中
-	目前购物车中有书&nbsp<span id="totalCount"></span> &nbsp本 ,共计&nbsp<span id="totalMoney"> &nbsp</span>元。
+<dir id="cart">
+您已经将&nbsp <span id="bookName"></span> &nbsp加入到购物车中
+目前购物车中有书&nbsp<span id="totalCount"></span> &nbsp本 ,总价格共计&nbsp<span id="totalMoney"> &nbsp</span>元。
+</dir>
 	<br><br>
 	
-	JAVA &nbsp &nbsp<a href="${pageContext.request.contextPath}/addToCart?id=Java&price=100">加入购物车</a> &nbsp &nbsp &nbsp100元/本
+	JAVA &nbsp &nbsp<a href="${pageContext.request.contextPath}/addToCart?id=Java&price=100">加入购物车</a> &nbsp &nbsp 100元/本
 	<br><br>
 	
-	Oracle &nbsp &nbsp<a href="${pageContext.request.contextPath}/addToCart?id=Oracle&price=200">加入购物车</a>&nbsp &nbsp &nbsp 200元/本
+	Oracle &nbsp &nbsp<a href="${pageContext.request.contextPath}/addToCart?id=Oracle&price=200">加入购物车</a>&nbsp&nbsp 200元/本
 	<br><br>
 	
-	Struts2 &nbsp &nbsp<a href="${pageContext.request.contextPath}/addToCart?id=Sturts2&price=300">加入购物车</a>&nbsp &nbsp &nbsp 300元/本
+	Struts2 &nbsp &nbsp<a href="${pageContext.request.contextPath}/addToCart?id=Sturts2&price=300">加入购物车</a>&nbsp &nbsp  300元/本
+
 	<br><br>
+
 </body>
 </html>
