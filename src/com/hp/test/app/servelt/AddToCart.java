@@ -15,7 +15,7 @@ import com.hp.test.app.beans.ShoppingCart;
 /**
  * Servlet implementation class AddToCart
  */
-@WebServlet("/addToCart")
+//@WebServlet("/addToCart")
 public class AddToCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
